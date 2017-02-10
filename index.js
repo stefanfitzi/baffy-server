@@ -31,7 +31,7 @@ console.log('start application with the following properties: ' + printOutProper
 // base function for all database requests (parameters: res=http response, query=SQL query with '?' placeholders, data=object with a value for every query placeholder)
 function handle_database(res, query, data) {
     
-    pool.getConnection(function(err,connection){
+    pool.getConnection(function(err, connection){
         if (err) {
           res.json({"code" : 100, "status" : "Error in connection database"});
           return;
@@ -45,7 +45,7 @@ function handle_database(res, query, data) {
         });
 
         connection.on('error', function(err) {      
-              res.json({"code" : 100, "status" : "Error in connection database"});
+              res.json({"code" : 100, "status" : "Error executing the query: " + query + "with data: " + data});
               return;     
         });
   });
