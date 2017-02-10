@@ -7,6 +7,16 @@ var mysql = require('mysql')
 var propertiesReader = require('properties-reader');
 
 var app = express()
+
+// CORS implementation
+var allowCrossDomain = function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', "*");
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+}
+app.use(allowCrossDomain);
+
 // parse incoming request bodies in a middleware before your handlers and makes them available under req.body
 app.use(bodyParser.json());
 
