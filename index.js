@@ -71,7 +71,7 @@ app.post('/member', function(req, res) {
 })
 
 // update an existing member
-app.post('/member/:id', function(req, res) {
+app.put('/member/:id', function(req, res) {
     console.log('request: ' + req.method + ' member with id ' + req.params.id + ' and with data: ' + JSON.stringify(req.body));
 	var data = req.body;
 	handle_database(res, 'update member set ? where id=?', [data, req.params.id]);
