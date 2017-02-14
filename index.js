@@ -81,10 +81,10 @@ app.post('/member', function (req, res) {
 })
 
 // update an existing member
-app.put('/member/:id', function (req, res) {
-    console.log('request: ' + req.method + ' member with id ' + req.params.id + ' and with data: ' + JSON.stringify(req.body));
+app.put('/member', function (req, res) {
+    console.log('request: ' + req.method + ' member with data: ' + JSON.stringify(req.body));
     var data = req.body;
-    handle_database(res, 'update member set ? where id=?', [data, req.params.id]);
+    handle_database(res, 'update member set ? where id=?', [data, data.id]);
 })
 
 // delete one member by id
