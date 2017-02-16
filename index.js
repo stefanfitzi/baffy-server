@@ -36,6 +36,7 @@ function printOutProperties() {
     return '\ndb-host: ' + properties.get('db.pool.host') + '\ndatabase: ' + properties.get('db.pool.database') + '\ndb-user: ' + properties.get('db.pool.user');
 }
 
+// show configuration on startup
 console.log('start application with the following properties: ' + printOutProperties());
 
 // base function for all database requests (parameters: res=http response, query=SQL query with '?' placeholders, data=object with a value for every query placeholder)
