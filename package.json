@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -12,6 +13,8 @@
     "body-parser": "^1.16.0",
     "express": "^4.14.1",
     "mysql": "^2.13.0",
+    "jsonwebtoken": "^8.2.0",
+    "bcrypt": "^1.0.3",
     "properties-reader": "0.0.15"
   },
   "repository": {
