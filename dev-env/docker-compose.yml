@@ -1,0 +1,11 @@
+version: '3'
+services:
+  mysql:
+    build: mysql
+    container_name: bafapp-mysql
+    image: bafapp-mysql
+    ports:
+      - "13306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: bafapp
