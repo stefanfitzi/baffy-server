@@ -5,6 +5,7 @@ var mysql = require('mysql');
 var pool = mysql.createPool({
     connectionLimit: properties.get('db.pool.connectionLimit'),
     host: properties.get('db.pool.host'),
+    port: properties.get('db.pool.port'),
     user: properties.get('db.pool.user'),
     password: properties.get('db.pool.password'),
     database: properties.get('db.pool.database'),
